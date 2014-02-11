@@ -1,0 +1,7 @@
+<% page = page_button
+   infos = link_data[page] 
+   if(infos[:active]) %>
+  <li class="active"><span><%=infos[:link_text]%></span></li> 
+<% else %>
+   <li><%= link_to infos[:link_text], infos[:target]%></li>
+<% end %>

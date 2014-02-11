@@ -1,0 +1,43 @@
+!!! 5
+%html
+  %head
+    / %meta{:content => 'text/html; charset=UTF-8', http-equiv='content-type'}
+  
+    = stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700'
+    = stylesheet_link_tag 'core/base'
+    = stylesheet_link_tag 'navigation/hlist'
+    = stylesheet_link_tag 'forms/gray-theme'
+    = stylesheet_link_tag 'screen/typography.css'
+    = stylesheet_link_tag 'screen/screen-FULLPAGE-layout'
+    = stylesheet_link_tag 'print/print.css'
+
+    / = stylesheet_link_tag 'application' 
+    %title Home
+%body
+  %header
+    .ym-wrapper
+      .ym-wbox
+        /- haml_concat(render :partial => 'vf_heading')
+        %h1
+          = image_tag 'vf_cogs.gif', :alt => "Ein Logo", :style => "width: auto; height: 120px;vertical-align:middle;"
+          %span(style="margin-left: -0.5ex;") Vokal 
+          %span(style="vertical-align:sub;")> Fabrik
+
+  %nav#nav
+    .ym-wrapper
+      .ym-hlist
+        %ul
+          - menu_data = page_menu_data
+          = render :partial => 'page_button', :collection => menu_data[:pages], :locals => menu_data
+
+  %main
+    .ym-wrapper
+      .ym-wbox
+        %section.box.info
+          .ym-grid.linerarize-level-1
+            =yield :layout              
+
+  %footer
+    .ym-wrapper
+      .ym-wbow
+        %p Vokalfabrik 2014 &ndash; CSS-Layout basiert auf <a href="http://www.yaml.de">YAML</a>
