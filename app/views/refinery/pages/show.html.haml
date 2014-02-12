@@ -2,8 +2,7 @@
   %article
     #main.ym-gbox-left
       %h4= @page.title
-      %p= raw decorate_img_tags(@page.content_for(:body))
-
+      %p= raw @page.content_for(:body)
 %aside.ym-g33.ym-gr
   .ym-gbox-right.secondary
-    %p= raw decorate_img_tags(@page.content_for(:side_body))
+    %p= raw @page.content_for(:side_body)
