@@ -1,3 +1,5 @@
+@import "../../_yaml-var-globals", "../../mixins/_yaml-mixins-core";
+
 @if $ym-base-normalization == true {
 	/**
 	 *  @section Normalisation Module

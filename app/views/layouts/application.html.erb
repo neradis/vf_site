@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=UTF-8" http-equiv="content-type" />
+    <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700' %>
+    <%= stylesheet_link_tag 'application' %>
+    <title>Home</title>
+  </head>
+</html>
+<body>
+  <header>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+        <!--- haml_concat(render :partial => 'vf_heading')
+        -->
+        <h1>
+          <%= image_tag 'vf_cogs.gif', :alt => "Ein Logo", :style => "width: auto; height: 120px;vertical-align:middle;" %>
+          <span style="margin-left: -0.5ex;">Vokal</span><span style="vertical-align:sub;">Fabrik</span>
+        </h1>
+      </div>
+    </div>
+  </header>
+  <nav id="nav">
+    <div class="ym-wrapper">
+      <div class="ym-hlist">
+        <ul>
+          <% menu_data = page_menu_data %>
+          <%= render :partial => 'page_button', :collection => menu_data[:pages], :locals => menu_data %>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <main>
+    <div class="ym-wrapper">
+      <div class="ym-wbox">
+        <section class="box info">
+          <div class="ym-grid linerarize-level-1">
+            <%= yield :layout %>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+  <footer>
+    <div class="ym-wrapper">
+      <div class="ym-wbow">
+        <p>Vokalfabrik 2014 &ndash; CSS-Layout basiert auf <a href="http://www.yaml.de">YAML</a></p>
+      </div>
+    </div>
+  </footer>
+</body>

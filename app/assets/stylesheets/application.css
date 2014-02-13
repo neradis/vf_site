@@ -10,6 +10,11 @@
  *
  *= require refinery/formatting
  *= require refinery/theme
+ *= require 'core/base' 
+ *= require 'navigation/hlist' 
+ *= require 'forms/gray-theme' 
+ *= require 'screen/typography' 
+ *= require 'screen/screen-FULLPAGE-layout' 
+ *= require 'print/print' 
  *= require_self
- *= require_tree .
  */
