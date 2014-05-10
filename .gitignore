@@ -96,3 +96,14 @@ vendor/extensions/**/spec/dummy
 
 #etags/ctags/rippertags
 TAGS*
+
+#Intellij
+*.ids
+*.iws
+*.iml
+*.ipr
+/.generators
+/.rakeTasks
+
+#Notes
+*_notes

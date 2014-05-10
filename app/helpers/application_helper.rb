@@ -5,20 +5,19 @@ module ApplicationHelper
     xml.span 'Fabrik', :style => 'vertical-align:sub;'
     render :inline => xml.target!
   end
-  
+
   def page_menu_data
-    active_page = @page
     pages = Refinery::Page.in_menu.sort_by { |p| p.lft }
-    link_data = pages.inject(Hash.new) do |h,p|
-      h[p] = {active: active_page.present? && p == active_page, 
+    link_data = pages.inject(Hash.new) do |h, p|
+      h[p] = {active: @page.present? && p == @page,
               link_text: page_link_text(p),
               target: p.slug.present? && p.slug || p}
-      h 
+      h
     end
     {pages: pages, link_data: link_data}
   end
 
   def page_link_text(page)
-    page.menu_title.present? && page.menu_title || page.title      
+    page.menu_title.present? && page.menu_title || page.title
   end
 end

@@ -1,13 +1,16 @@
-<div class="ym-g66 ym-gl">
-  <article>
-    <div class="ym-gbox-left">
-      <h4><%= @page.title %></h4>
-      <p><%= raw @page.content_for(:body) %></p>
+<section class="box info">
+    <div class="ym-g66 ym-gl">
+        <article>
+            <div class="ym-gbox-left">
+                <h4><%= @page.title %></h4>
+
+                <p><%= raw @page.content_for(:body) %></p>
+            </div>
+        </article>
     </div>
-  </article>
-</div>
-<aside class="ym-g33 ym-gr">
-  <div class="ym-gbox-right secondary">
-    <p><%= raw @page.content_for(:side_body) %></p>
-  </div>
-</aside>
+    <aside class="ym-g33 ym-gr">
+        <div class="ym-gbox-right secondary">
+            <p><%= raw @page.content_for(:side_body) %></p>
+        </div>
+    </aside>
+</section>
