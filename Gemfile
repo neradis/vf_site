@@ -14,6 +14,9 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+#remote deployment
+gem 'capistrano'
+
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
 #  gem 'refinerycms-blog', '~> 2.1.0'
