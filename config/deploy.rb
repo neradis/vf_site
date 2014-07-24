@@ -5,7 +5,8 @@ set :application, 'vf_refinery'
 set :repo_url, 'git@github.com:neradis/vf_site.git'
 
 # Default branch is :master
-ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+#ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
+set :branch, :capistrano
 
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/my_app'
@@ -33,6 +34,12 @@ ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
 
 # Default value for keep_releases is 5
 set :keep_releases, 4
+
+# Ask for password then creating new postgres user
+set :pg_ask_for_password, true
+
+# fixes possible rvm1-capistrano3 bug
+set :rvm1_auto_script_path, "/tmp/#{fetch :application}"
 
 namespace :deploy do
 
