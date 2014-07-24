@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-#ruby '~> 2.1.0'
+ruby '2.1.1'
 
 gem 'rails', '~> 3.2.3'
 gem 'refinerycms', '~> 2.1.0'
@@ -22,6 +22,7 @@ group :development do
   gem 'capistrano-postgresql', '~> 3.0'
   gem 'capistrano-rails', '~> 1.1.1'
   gem 'capistrano-bundler', '~> 1.1.2'
+  gem 'rvm1-capistrano3'
 end
 
 # Optionally, specify additional Refinery CMS Extensions here:

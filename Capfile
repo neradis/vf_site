@@ -18,15 +18,16 @@ require 'capistrano/deploy'
 # require 'capistrano/rbenv'
 # require 'capistrano/chruby'
 # require 'capistrano/bundler' #we cannot use it since we need the non-login workaround
+require 'capistrano/postgresql'
 require 'capistrano/rails/assets'
 require 'capistrano/rails/migrations'
-require 'capistrano/postgresql'
+require 'rvm1/capistrano3'
 
 #SSH commands from Capistrano are executed in non-login shells, so we have to ensure
 #with this workaround that RVM is loaded before runnting bundle exec commands
-%i(rake rails).each { |cmd|
-  SSHKit.config.command_map.prefix[cmd].push("source $HOME/.bash_profile && bundle exec")
-}
+# %i(rake rails).each { |cmd|
+#   SSHKit.config.command_map.prefix[cmd].push("source $HOME/.bash_profile && bundle exec")
+# }
 
 
 # Loads custom tasks from `lib/capistrano/tasks' if you have any defined.

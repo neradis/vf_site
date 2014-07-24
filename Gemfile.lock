@@ -175,6 +175,9 @@ GEM
       refinerycms-core (= 2.1.2)
     routing-filter (0.3.1)
       actionpack
+    rvm1-capistrano3 (1.2.5)
+      capistrano (~> 3.0)
+      sshkit (>= 1.2)
     sass (3.3.10)
     sass-rails (3.2.6)
       railties (~> 3.2.0)
@@ -219,5 +222,6 @@ DEPENDENCIES
   rails (~> 3.2.3)
   refinerycms (~> 2.1.0)
   refinerycms-acts-as-indexed (~> 1.0.0)
+  rvm1-capistrano3
   sass-rails (~> 3.2.3)
   uglifier (>= 1.0.3)
