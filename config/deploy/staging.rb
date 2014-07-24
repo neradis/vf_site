@@ -11,7 +11,7 @@
 # used to set extended properties on the server.
 
 
-server 'neradis@fusionfactory.de', user : 'neradis', roles : %{app, web}
+server 'neradis@fusionfactory.de', user: 'neradis', roles: %{app, web}
 role :db, %w{neradis@fusionfactory.de}
 
 #server 'example.com', user: 'deploy', roles: %w{web app}, my_property: :my_value
