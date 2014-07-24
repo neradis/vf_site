@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+#ruby '~> 2.1.0'
+
 gem 'rails', '~> 3.2.3'
 gem 'refinerycms', '~> 2.1.0'
 
@@ -15,7 +17,11 @@ group :assets do
 end
 
 #remote deployment
-gem 'capistrano'
+group :development do
+  gem 'capistrano', '~> 3.2.1'
+  gem 'capistrano-postgresql', '~> 3.0'
+  gem 'capistrano-rails', '~> 1.1.1'
+end
 
 # Optionally, specify additional Refinery CMS Extensions here:
 gem 'refinerycms-acts-as-indexed', '~> 1.0.0'
