@@ -1,49 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta content="text/html;charset=UTF-8" http-equiv="content-type"/>
-    <!--%= javascript_include_tag 'application.js' %-->
+  <head>
+    <meta content="text/html;charset=UTF-8" http-equiv="content-type" />
     <%= stylesheet_link_tag 'http://fonts.googleapis.com/css?family=Droid+Serif:400,400italic,700|Droid+Sans:700' %>
     <%= stylesheet_link_tag 'application' %>
     <title>Home</title>
-</head>
+  </head>
 </html>
 <body>
-<header>
+  <header>
     <div class="ym-wrapper">
-        <div class="ym-wbox">
-            <h1>
-                <%= image_tag 'vf_logo_notes_lighter.png', :alt => "Zahnrad-Logo",  :class => "cog-logo" %>
-                <span class="vokal">Vokal</span><span class="fabrik" style="">Fabrik</span>
-                <%= image_tag 'vf_logo_people.png', :alt => "Gruppen-Logo", :class => "group-logo" %>
-            </h1>
-        </div>
+      <div class="ym-wbox">
+        <!--- haml_concat(render :partial => 'vf_heading')
+        -->
+        <h1>
+          <%= image_tag 'vf_cogs.gif', :alt => "Ein Logo", :style => "width: auto; height: 120px;vertical-align:middle;" %>
+          <span style="margin-left: -0.5ex;">Vokal</span><span style="vertical-align:sub;">Fabrik</span>
+        </h1>
+      </div>
     </div>
-</header>
-<nav id="nav">
+  </header>
+  <nav id="nav">
     <div class="ym-wrapper">
-        <div class="ym-hlist">
-            <ul>
-                <% menu_data = page_menu_data %>
-                <%= render :partial => 'page_button', :collection => menu_data[:pages], :locals => menu_data %>
-            </ul>
-        </div>
+      <div class="ym-hlist">
+        <ul>
+          <% menu_data = page_menu_data %>
+          <%= render :partial => 'page_button', :collection => menu_data[:pages], :locals => menu_data %>
+        </ul>
+      </div>
     </div>
-</nav>
-<main>
+  </nav>
+  <main>
     <div class="ym-wrapper">
-        <div class="ym-wbox">
-            <div class="ym-grid linerarize-level-1">
-                <%= yield :layout %>
-            </div>
-        </div>
+      <div class="ym-wbox">
+        <section class="box info">
+          <div class="ym-grid linerarize-level-1">
+            <%= yield :layout %>
+          </div>
+        </section>
+      </div>
     </div>
-</main>
-<footer>
+  </main>
+  <footer>
     <div class="ym-wrapper">
         <div class="ym-wbow">
-            <p>Vokalfabrik 2014 &ndash; CSS-Layout basiert auf <a href="http://www.yaml.de">YAML</a></p>
+            <p>Vokalfabrik 2014 &ndash;
+               verwaltet mittels <a href="http://refinerycms.com/">Refinery CMS</a>
+                auf <a href="http://rubyonrails.org/">Ruby On Rails</a>;
+                CSS-Layout basiert auf <a href="http://www.yaml.de">YAML</a></p>
         </div>
     </div>
-</footer>
+  </footer>
 </body>
