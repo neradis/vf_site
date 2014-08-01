@@ -6,7 +6,7 @@ set :repo_url, 'git@github.com:neradis/vf_site.git'
 
 # Default branch is :master
 #ask :branch, proc { `git rev-parse --abbrev-ref HEAD`.chomp }.call
-set :branch, :capistrano
+set :branch, :master
 
 # Default deploy_to directory is /var/www/my_app
 # set :deploy_to, '/var/www/my_app'
@@ -36,6 +36,8 @@ set :branch, :capistrano
 set :keep_releases, 4
 
 # Ask for password then creating new postgres user
+set :pg_database, 'vf_prod'
+set :pg_user, 'vfsite'
 set :pg_ask_for_password, true
 
 # fixes possible rvm1-capistrano3 bug
@@ -46,8 +48,7 @@ namespace :deploy do
   desc 'Restart application'
   task :restart do
     on roles(:app), in: :sequence, wait: 5 do
-      # Your restart mechanism here, for example:
-      # execute :touch, release_path.join('tmp/restart.txt')
+      execute :touch, release_path.join('tmp/restart.txt')
     end
   end
 
