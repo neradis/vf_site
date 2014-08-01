@@ -17,7 +17,7 @@ group :assets do
 end
 
 #remote deployment
-group :development do
+group :deployment do
   gem 'capistrano', '~> 3.2.1'
   gem 'capistrano-postgresql', '~> 3.0'
   gem 'capistrano-rails', '~> 1.1.1'
